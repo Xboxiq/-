@@ -176,7 +176,23 @@
     font: inherit !important;
     min-height: 14pt !important;
     padding: 1pt 2pt !important;
+    /* ===== انضباط محاذاة النص عند الطباعة =====
+       الحقول تستخدم dir="auto" مما يجعل اتجاه الإدخال يتبدّل تلقائياً حسب
+       المحرف الأول: قيم تبدأ بأرقام (كالتاريخ ورقم الهاتف ورقم الوثيقة)
+       تتبنّى LTR فتُحاذى يساراً، بينما النص العربي يُحاذى يميناً. على الورقة
+       المطبوعة يجب أن تظهر جميع القيم محاذاةً لبداية السطر العربي (يميناً)
+       لتتطابق مع النموذج الورقي الرسمي وتتوازى مع تسميات الحقول.
+       الحلّ: فرض text-align: right على عنصر الإدخال نفسه. الأرقام والتواريخ
+       تحافظ على ترتيبها الطبيعي (LTR) داخل المربّع لكنّها تُموضَع على
+       يمين الخانة كباقي القيم. */
+    text-align: right !important;
   }
+  .inp::placeholder { text-align: right !important; }
+  /* بعض الخلايا تتطلّب توسيط النص (الترويسة/المصفوفة/قائمة المراجعة) */
+  .tbl--head .cell-title .inp,
+  .tbl--head .cell-formno .inp,
+  .tbl--matrix .inp,
+  .tbl--checklist .inp { text-align: center !important; }
   .inp:focus-visible { outline: 0 !important; background: transparent !important; }
   .inp--err { background: transparent !important; outline: 0 !important; }
   .err-msg { display: none !important; }
