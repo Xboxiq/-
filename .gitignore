@@ -1,0 +1,22 @@
+# ملفات المصدر المستخرجة (تُستخرَج من ملف الـ zip عند الحاجة — لا تُتعقّب)
+_src/
+
+# Python
+__pycache__/
+*.pyc
+
+# نظام التشغيل / المحرّرات
+.DS_Store
+Thumbs.db
+*.swp
+
+# ملفات Office المؤقتة
+~$*
+
+# Node / skills CLI
+node_modules/
+.agents/
+tools/_unrar_once.js
+_render-tmp.js
+_render-smart.js
+_render-screen.js
